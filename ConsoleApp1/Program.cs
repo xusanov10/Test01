@@ -10,3 +10,29 @@ static void Main(string[] args)
     }
     Console.WriteLine(counter);
 }
+static void Main1(string[] args)
+{
+    int[,] ints = new int[3, 3];
+
+    for (int i = 0; i < ints.GetLength(0); i++)
+    {
+        for (int j = 0; j < ints.GetLength(1); j++)
+        {
+            Random rnd = new Random();
+            ints[i, j] = rnd.Next(1, 3);
+        }
+    }
+    int counter = 0;
+    for (int i = 0; i < ints.GetLength(0); i++)
+    {
+        for (int j = 0; j < ints.GetLength(1); j++)
+        {
+            Console.Write(ints[i, j] + " ");
+            counter += ints[i, j];
+
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine(counter);
+
+}
